@@ -18,6 +18,7 @@
         d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"
       />
     </icon>
+    <img src="{{customIcon}}" v-if="customIcon!=''">
     <span class="share-button__text" v-if="btnText">{{btnText}}</span>
     <span class="share-button__counter" v-if="hasCounter && counter > 0">{{ shortСounter }}</span>
   </button>
@@ -45,7 +46,8 @@ export default {
     hasCounter: { type: Boolean, default: false },
     digitsCounter: { type: Number, default: 0 },
     keyCounter: { type: String, default: "" },
-    isBlank: { type: Boolean, default: true }
+    isBlank: { type: Boolean, default: true },
+    customIcon: {type: String, default:""}
   },
   mounted() {
     if (this.$props.hasCounter) this.getShareCounter();
