@@ -19,6 +19,7 @@
         d="M11.977 7.613c1.003 1.183 1.655 2.714 1.655 4.387s-.652 3.202-1.655 4.387l-.001-.001.001.001c2.378-1.151 4.087-3.755 4.099-6.786V5.303a6.9 6.9 0 0 0-4.099 2.31zM18.34 9.568c0 3.045 1.666 5.662 4.052 6.818A6.792 6.792 0 0 0 18.34 5.304v4.264zM17.208 13.715c-.423 1.752-1.687 3.249-3.262 4.244a6.759 6.759 0 0 0 3.261.833 6.771 6.771 0 0 0 3.262-.833c-1.574-.995-2.838-2.493-3.261-4.244z"
       />
     </icon>
+    <img v-bind:src="customIcon" v-if="customIcon!=''">
     <span class="share-button__text" v-if="btnText">{{btnText}}</span>
   </button>
 </template>
@@ -37,7 +38,8 @@ export default {
     modalWidth: { type: Number, default: 500 },
     modalHeight: { type: Number, default: 500 },
     hasIcon: { type: Boolean, default: true },
-    isBlank: { type: Boolean, default: true }
+    isBlank: { type: Boolean, default: true },
+    customIcon: {type: String, default:""}
   },
   methods: {
     openShareWindow() {

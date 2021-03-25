@@ -24,6 +24,7 @@
         d="M17.8 11.13a.3.3 0 0 1-.3-.3c-.02-1.86-.55-3.28-1.64-4.34a5.63 5.63 0 0 0-4.03-1.59.3.3 0 0 1-.3-.3c0-.17.14-.3.3-.3 1.77 0 3.27.6 4.46 1.76a6.45 6.45 0 0 1 1.81 4.76.3.3 0 0 1-.3.3zM12.9 13.74s.42.04.65-.24l.45-.57c.21-.28.73-.45 1.24-.17a13.63 13.63 0 0 1 2.15 1.54c.33.28.41.69.18 1.12v.01c-.23.41-.54.8-.93 1.15a1.84 1.84 0 0 1-1.1.47c-.13 0-.26-.02-.4-.06v-.01c-.48-.14-1.28-.48-2.6-1.2a15.6 15.6 0 0 1-3.18-2.33l-.03-.03-.03-.03-.04-.03-.03-.04a15.38 15.38 0 0 1-2.32-3.17 13.72 13.72 0 0 1-1.2-2.6l-.02-.01A1.24 1.24 0 0 1 5.64 7c.04-.31.19-.63.46-.95.36-.4.74-.7 1.15-.94h.01c.43-.23.84-.15 1.12.18a13.52 13.52 0 0 1 1.54 2.15c.29.51.1 1.03-.17 1.25l-.56.45c-.29.22-.25.65-.25.65s.83 3.16 3.95 3.96"
       />
     </icon>
+    <img v-bind:src="customIcon" v-if="customIcon!=''">
     <span class="share-button__text" v-if="btnText">{{btnText}}</span>
   </button>
 </template>
@@ -38,7 +39,8 @@ export default {
   props: {
     url: { type: String, default: getDocumentHref },
     btnText: { type: String, default: "Viber" },
-    hasIcon: { type: Boolean, default: true }
+    hasIcon: { type: Boolean, default: true },
+    customIcon: {type: String, default:""}
   },
   methods: {
     openShareWindow() {

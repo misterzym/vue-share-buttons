@@ -30,7 +30,8 @@ export default {
     url: { type: String, default: getDocumentHref },
     description: { type: String, default: getDocumentTitle },
     btnText: { type: String, default: "Telegram" },
-    hasIcon: { type: Boolean, default: true }
+    hasIcon: { type: Boolean, default: true },
+    customIcon: {type: String, default:""}
   },
   methods: {
     openShareWindow() {
